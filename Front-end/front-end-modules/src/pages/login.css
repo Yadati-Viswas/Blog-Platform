@@ -1,0 +1,16 @@
+.text-fields {
+    text-align: center;
+    color: #f5f5f5;
+  }
+
+  .login-page {
+    background-image: url("../hmc4u6yh.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+  }
