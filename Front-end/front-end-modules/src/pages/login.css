@@ -4,8 +4,13 @@
   }
 
   .login-page {
-    background-color: #323232;
-    min-height: 100vh;
-    flex-direction: column;
-    
+    background-image: url("../hmc4u6yh.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    margin: 0;
   }
