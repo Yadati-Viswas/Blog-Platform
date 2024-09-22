@@ -1,16 +1,38 @@
 import React from "react";
 import { useState } from "react";
-import './login-components.css';
+import validator from 'validator';
+import './Components.css';
 import {GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 
 const LoginComponent = ({ onLogin }) => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const clientId = '';
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const handleLogin = () => {
-      onLogin(email, password);  
+        if(ValidateEmail(email)){
+            if(validatePassword(password)){
+                onLogin(email, password);
+            }  
+            else{
+                PasswordError();
+            }
+        }
+        else {
+            EmailError();
+        }
+        
     };
-
+    function ValidateEmail(e) {
+        return validator.isEmail(email);
+    }
+    function validatePassword(e) {
+        return !validator.isEmpty(password);
+    }
+    function EmailError() {
+        
+    }
+    function PasswordError() {
+        
+    }
     function handleLoginSuccess(response) {
         console.log('Login successful', response);
     }
@@ -20,20 +42,18 @@ const LoginComponent = ({ onLogin }) => {
     }
     return (
         <div >
-            <div className="login-container">
+            <div className="container">
                 <h2 className="login-field">Login</h2>
                 <div >
                     <div>
-                        <h3 className="text-fields">Email</h3>
+                        <label className="text-fields">Email</label>
                         <input className="custom-fields" type="email" placeholder="Email" value={email}
-                        onChange={(e) => setEmail(e.target.value)} />
+                        onChange={(e) => setEmail(e.target.value)} required/>
                     </div>
-                    <br/>
                     <div>
-                    <h3 className="text-fields">Password</h3>
+                        <label className="text-fields">Password</label>
                         <input  className="custom-fields" type="password" placeholder="Password" value={password}
-                        onChange={(e) => setPassword(e.target.value)} />
-                    <br />
+                        onChange={(e) => setPassword(e.target.value)} required/>
                     </div>
                     <div class="login-actions">
                         <a href="#" class="forgot-password">Forgot Password?</a>
