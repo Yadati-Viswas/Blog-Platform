@@ -1,5 +1,5 @@
 import React from "react";
-import LoginComponent from "../components/login-components";
+import LoginComponent from "../components/LoginUserComponents";
 import './login.css';
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
