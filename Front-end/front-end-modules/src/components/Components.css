@@ -104,4 +104,11 @@
   .gender-field {
     padding-right: 15px !important;
   }
+
+/* CSS for form field error */
+
+  .error {
+    color: #fc0808;
+    font-size: small;
+  }
   
