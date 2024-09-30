@@ -11,6 +11,13 @@ public class UserResource {
     @GeneratedValue
     private int Id;
     private String email;
+    private String firstname;
+    private String lastname;
+    private String username;
+    private String mobilenumber;
+    private String gender;
+    private String Password;
+    private String confirmpassword;
 
     public int getId() {
         return this.Id;
@@ -20,20 +27,12 @@ public class UserResource {
         this.Id = Id;
     }
 
-    private String firstname;
-    private String lastname;
-    private String username;
-    private String mobilenumber;
-    private String gender;
-    private String Password;
-    private String confirmPassword;
-
-    public String getConfirmPassword() {
-        return this.confirmPassword;
+    public String getConfirmpassword() {
+        return this.confirmpassword;
     }
 
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
+    public void setConfirmpassword(String confirmpassword) {
+        this.confirmpassword = confirmpassword;
     } 
 
     public String getUsername() {
