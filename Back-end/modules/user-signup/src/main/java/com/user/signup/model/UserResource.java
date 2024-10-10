@@ -1,5 +1,7 @@
 package com.user.signup.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -18,6 +20,11 @@ public class UserResource {
     private String gender;
     private String Password;
     private String confirmpassword;
+    private LocalDateTime lastlogin;
+    private LocalDateTime createdon;
+
+    //private String userpermission;
+    
 
     public int getId() {
         return this.Id;
@@ -90,6 +97,30 @@ public class UserResource {
     public void setMobilenumber(String mobilenumber) {
         this.mobilenumber = mobilenumber;
     }
+
+    public LocalDateTime getLastlogin() {
+        return this.lastlogin;
+    }
+
+    public void setLastlogin(LocalDateTime localDateTime) {
+        this.lastlogin = localDateTime;
+    }
+
+    public LocalDateTime getCreatedon() {
+        return this.createdon;
+    }
+
+    public void setCreatedon(LocalDateTime createdon) {
+        this.createdon = createdon;
+    }
+
+    // public String getUserpermission() {
+    //     return this.userpermission;
+    // }
+
+    // public void setUserpermission(String userpermission) {
+    //     this.userpermission = userpermission;
+    // }
     
 
 }

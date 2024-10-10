@@ -1,5 +1,7 @@
 package com.user.login.service;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,8 @@ public class LoginUserService {
         if (!userResource.getPassword().equals(password)) {
             throw new InvalidLoginException("Invalid password");
         }
+        userResource.setLastlogin(LocalDateTime.now());
+        signUpRepository.save(userResource);
         return userResource;
     }
 
