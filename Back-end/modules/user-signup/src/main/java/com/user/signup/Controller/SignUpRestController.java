@@ -1,5 +1,7 @@
 package com.user.signup.Controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,8 @@ import com.user.signup.service.SignUpService;
 @RestController
 @RequestMapping("/user")
 public class SignUpRestController {
+
+    private static final Logger log = LoggerFactory.getLogger(SignUpRestController.class);
 
     @Autowired
     private SignUpService signUpService;

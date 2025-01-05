@@ -2,6 +2,8 @@ package com.user.login.service;
 
 import java.time.LocalDateTime;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,8 @@ import com.user.signup.repository.SignUpRepository;
 
 @Service
 public class LoginUserService {
+
+    private static final Logger log = LoggerFactory.getLogger(LoginUserService.class);
 
     @Autowired
     private SignUpRepository signUpRepository;

@@ -5,9 +5,13 @@ import java.time.LocalDateTime;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Entity
 public class UserResource {
+
+    private static final Logger log = LoggerFactory.getLogger(UserResource.class);
 
     @Id
     @GeneratedValue
